@@ -1,0 +1,63 @@
+/*
+Main
+*/
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+}
+
+header,
+#best_movie,
+h2,
+footer,
+.autre_1,
+.autre_2 {
+    width: 80%;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+main {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+}
+
+h1, h2, label {
+    font-size: 2rem;
+}
+
+/*
+Header
+*/
+
+header {
+    background-color: #60777D;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 15px 20px;
+    margin-top: 20px;
+    margin-bottom: 0;
+}
+
+header img {
+    max-width: 150px;
+    height: auto;
+}
+
+h1 {
+    color: white;
+    margin: 0;
+}
+
+h2 {
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
