@@ -7,9 +7,9 @@ async function loadBestMovie() {
             throw new Error('Network error when fetching best movie');
         }
         const data = await response.json();
-        const Movie = data.results[0];
+        const movie = data.results[0];
 
-        const responseDetails = await fetch(API_URL + '/titles/' + Movie.id);
+        const responseDetails = await fetch(API_URL + '/titles/' + movie.id);
         const fullMovie = await responseDetails.json();
 
         const section = document.getElementById('best_movie');
@@ -47,6 +47,37 @@ async function loadBestMovie() {
     } catch (error) {
         console.error("Error loading movie: ", error);
     }
+}
+
+function createMovieCard(film) {
+    let card = document.createElement('article');
+    card.classList.add('movie-card');
+
+    let img = document.createElement('img');
+    img.src = film.image_url;
+    img.alt = film.title;
+
+    img.addEventListener('error', function() {
+        img.src = 'logo.png';
+    });
+
+    let overlay = document.createElement('div');
+    overlay.classList.add('movie-overlay');
+
+    let title = document.createElement('h3');
+    title.textContent = film.title;
+
+    let btn = document.createElement('button');
+    btn.classList.add('details-btn');
+    btn.textContent = 'Détails';
+
+    overlay.appendChild(title);
+    overlay.appendChild(btn);
+
+    carte.appendChild(img);
+    carte.appendChild(overlay);
+
+    return card;
 }
 
 loadBestMovie();
