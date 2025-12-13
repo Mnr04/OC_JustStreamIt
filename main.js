@@ -58,7 +58,7 @@ function createMovieCard(film) {
     img.alt = film.title;
 
     img.addEventListener('error', function() {
-        img.src = 'logo.png';
+        img.src = 'img/logo.png';
     });
 
     let overlay = document.createElement('div');
@@ -74,10 +74,34 @@ function createMovieCard(film) {
     overlay.appendChild(title);
     overlay.appendChild(btn);
 
-    carte.appendChild(img);
-    carte.appendChild(overlay);
+    card.appendChild(img);
+    card.appendChild(overlay);
 
     return card;
 }
 
+async function loadBestCategory() {
+    let url = API_URL + '/titles/?page_size=7&sort_by=-imdb_score';
+
+    try {
+        let reponse = await fetch(url);
+        let data = await reponse.json();
+        let resultats = data.results;
+
+        films_list = resultats.slice(1, 7);
+
+        let container = document.getElementById('best_rank');
+
+        for (let i = 0; i < films_list.length; i++) {
+            let film = films_list[i];
+            let card = createMovieCard(film);
+            container.appendChild(card);
+        }
+
+    } catch (error) {
+        console.log(error);
+    }
+}
+
 loadBestMovie();
+loadBestCategory();
