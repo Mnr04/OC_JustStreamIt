@@ -4,7 +4,7 @@ async function loadBestMovie() {
     try {
         const response = await fetch(API_URL + '/titles/?sort_by=-imdb_score');
         if (!response.ok) {
-            throw new Error('Network error when fetching best movie');
+            throw new Error('Network error');
         }
         const data = await response.json();
         const movie = data.results[0];
@@ -103,5 +103,34 @@ async function loadBestCategory() {
     }
 }
 
+async function loadCategory(genre, idSection) {
+    let url = API_URL + '/titles/?sort_by=-imdb_score&genre=' + genre + '&page_size=10';
+
+    try {
+        let reponse = await fetch(url);
+        let data = await reponse.json();
+        let resultats = data.results;
+
+        let movieToDisplay = [];
+        movieToDisplay = resultats.slice(0, 6);
+
+
+        let container = document.getElementById(idSection);
+        container.innerHTML = '';
+
+        for (let i = 0; i < movieToDisplay.length; i++) {
+            let movie = movieToDisplay[i];
+            let card = createMovieCard(movie);
+            container.appendChild(card);
+        }
+
+    } catch (error) {
+        console.log(error);
+    }
+}
+
+
 loadBestMovie();
 loadBestCategory();
+loadCategory("mystery", "mystery")
+loadCategory("action", "biography")
