@@ -104,9 +104,11 @@ async function loadBestCategory() {
 }
 
 async function loadCategory(genre, idSection) {
+
     let url = API_URL + '/titles/?sort_by=-imdb_score&genre=' + genre + '&page_size=10';
 
     try {
+
         let reponse = await fetch(url);
         let data = await reponse.json();
         let resultats = data.results;
@@ -124,13 +126,55 @@ async function loadCategory(genre, idSection) {
             container.appendChild(card);
         }
 
+
     } catch (error) {
         console.log(error);
     }
 }
 
+async function otherCategory(idMenu, idSectionToLoad, defaultGenre){
+    let url = API_URL + '/genres/?page_size=50';
 
+    try {
+        let reponse = await fetch(url);
+        let data = await reponse.json();
+        let menu = document.getElementById(idMenu);
+
+        // Add each genre in menu
+        let genres = data.results;
+
+        genres.forEach(function(genre) {
+            let option = document.createElement('option');
+            option.value = genre.name;
+            option.textContent = genre.name;
+            menu.appendChild(option);
+        });
+
+        if (defaultGenre) {
+            menu.value = defaultGenre;
+            loadCategory(defaultGenre, idSectionToLoad);
+        }
+
+        // Change value of category
+        menu.addEventListener('change', function(event) {
+            let chooseGenre = event.target.value;
+            loadCategory(chooseGenre, idSectionToLoad);
+        });
+
+
+    } catch (error) {
+        console.log(error);
+    }
+
+}
+
+
+// Fix Category
 loadBestMovie();
 loadBestCategory();
 loadCategory("mystery", "mystery")
 loadCategory("action", "biography")
+
+// Other Menu
+otherCategory('category_choice', 'autre_1', 'Animation');
+otherCategory('category_choice_2', 'autre_2', 'Sport');
