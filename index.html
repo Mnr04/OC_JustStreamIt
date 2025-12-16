@@ -48,6 +48,46 @@
     </footer>
 
 
+    <dialog id="movie-modal">
+        <div class="modal-div">
+            <div class="modal-header">
+                <div class="header-info">
+                    <h1 id="modal-title"></h1>
+
+                    <p class="film-details">
+                        <span id="modal-year"></span> - <span id="modal-genres"></span>
+                    </p>
+                    <p class="film-details">
+                        <span id="modal-rated"></span> - <span id="modal-duration"></span> minutes
+                        (<span id="modal-countries"></span>)
+                    </p>
+                    <p class="film-details">IMDB score: <span id="modal-imdb"></span>/10</p>
+                    <p class="film-details">Recettes au box-office: <span id="modal-boxoffice"></span></p>
+
+                    <div class="director-block">
+                        <p><strong>Réalisé par:</strong></p>
+                        <p id="modal-directors"></p>
+                    </div>
+                </div>
+
+                <div class="header-img">
+                    <img id="modal-image" src="" alt="Affiche du film">
+                </div>
+            </div>
+
+            <div class="modal-body">
+                <p id="modal-description"></p>
+            </div>
+
+            <div class="modal-footer">
+                <p><strong>Avec:</strong></p>
+                <p class="actors-list" id="modal-actors"></p>
+                <button id="modal-close-btn" class="close-btn">Fermer</button>
+            </div>
+        </div>
+    </dialog>
+
+
     <script src="main.js"></script>
 </body>
 </html>

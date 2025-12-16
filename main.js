@@ -67,12 +67,17 @@ function createMovieCard(film) {
     let title = document.createElement('h3');
     title.textContent = film.title;
 
-    let btn = document.createElement('button');
-    btn.classList.add('details-btn');
-    btn.textContent = 'Détails';
+    let button = document.createElement('button');
+    button.classList.add('details-btn');
+    button.textContent = 'Détails';
+
+    // Open Modal
+    button.addEventListener('click', function() {
+        openModal(film.id);
+    });
 
     overlay.appendChild(title);
-    overlay.appendChild(btn);
+    overlay.appendChild(button);
 
     card.appendChild(img);
     card.appendChild(overlay);
@@ -166,6 +171,63 @@ async function otherCategory(idMenu, idSectionToLoad, defaultGenre){
         console.log(error);
     }
 
+}
+
+// MODAL
+// Open
+let modal = document.getElementById('movie-modal');
+modal.addEventListener('click', function(event) {
+    if (event.target === modal) {
+        modal.close();
+    }
+});
+// Close
+let closeButton = document.getElementById('modal-close-btn');
+closeButton.addEventListener('click', function() {
+    modal.close();
+});
+
+async function openModal(idFilm) {
+    let url = API_URL + '/titles/' + idFilm;
+
+    try {
+        let reponse = await fetch(url);
+        let movie = await reponse.json();
+
+
+        // Write element in html
+        document.getElementById('modal-title').textContent = movie.title;
+        document.getElementById('modal-year').textContent = movie.year;
+        document.getElementById('modal-genres').textContent = movie.genres.join(', ');
+        document.getElementById('modal-rated').textContent = movie.rated;
+        document.getElementById('modal-duration').textContent = movie.duration;
+        document.getElementById('modal-countries').textContent = movie.countries.join(' / ');
+        document.getElementById('modal-imdb').textContent = movie.imdb_score;
+        document.getElementById('modal-directors').textContent = movie.directors.join(', ');
+        document.getElementById('modal-description').textContent = movie.long_description;
+        document.getElementById('modal-actors').textContent = movie.actors.join(', ');
+
+        // Money Make
+        let recette = "No indication";
+        if (movie.worldwide_gross_income !== null) {
+            recette = movie.worldwide_gross_income + " $";
+        }
+        document.getElementById('modal-boxoffice').textContent = recette;
+
+        // Handle img
+        let imageModale = document.getElementById('modal-image');
+        imageModale.src = movie.image_url;
+        imageModale.alt = movie.title;
+        // If img not exist
+        imageModale.addEventListener('error', function() {
+            imageModale.src = 'logo.png';
+        });
+
+        modal.showModal();
+
+    } catch (erreur) {
+        console.log(erreur);
+    }
 }
 
 
