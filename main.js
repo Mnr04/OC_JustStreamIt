@@ -220,7 +220,7 @@ async function openModal(idFilm) {
         imageModale.alt = movie.title;
         // If img not exist
         imageModale.addEventListener('error', function() {
-            imageModale.src = 'logo.png';
+            imageModale.src = 'img/logo.png';
         });
 
         modal.showModal();
