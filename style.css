@@ -61,3 +61,236 @@ h2 {
     margin-top: 30px;
     margin-bottom: 30px;
 }
+
+/*
+=========================================
+best_movie
+=========================================
+*/
+
+#best_movie {
+    display: flex;
+    border: 4px solid black;
+    padding: 20px;
+    background: white;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+#best_movie img {
+    width: 200px;
+    object-fit: cover;
+    margin-right: 20px;
+    max-width: 100%;
+    height: auto;
+}
+
+.movie-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+
+.movie-info h2 {
+    width: 100%;
+    padding-left: 0;
+    max-width: none;
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+.movie-info p {
+    font-size: 1.1rem;
+    color: #333;
+    line-height: 1.4;
+}
+
+.btn-red {
+    background-color: #D32F2F;
+    color: white;
+    border: none;
+    padding: 10px 30px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    border-radius: 30px;
+    cursor: pointer;
+    align-self: flex-end;
+    margin-top: 15px;
+}
+
+/*
+=========================================
+Category Section
+=========================================
+*/
+
+#best_rank,
+#mystery,
+#biography,
+#autre_1,
+#autre_2 {
+    margin-top: 30px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    width: 80%;
+    max-width: 1000px;
+    margin-bottom: 50px;
+    padding: 0;
+}
+
+#best_rank img,
+#mystery img,
+#autre_1 img,
+#autre_2 img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/*
+=========================================
+Img Card
+=========================================
+*/
+
+section {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding-bottom: 30px;
+    max-width: 1000px;
+}
+
+.movie-card {
+    width: 100%;
+    position: relative;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.movie-card img {
+    width: 100%;
+    height: 100%;
+}
+
+.movie-overlay {
+    position: absolute;
+    top: 10%;
+    left: 0;
+    width: 100%;
+    height: 40%;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 15px;
+    box-sizing: border-box;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.movie-overlay h3 {
+    color: white;
+    margin: 0;
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+
+.details-btn {
+    align-self: flex-end;
+    background-color: transparent;
+    color: white;
+    border: 1px solid white;
+    padding: 5px 15px;
+    border-radius: 15px;
+    cursor: pointer;
+    font-size: 0.9rem;
+}
+
+.movie-card:hover .movie-overlay {
+    opacity: 1;
+}
+/*
+=========================================
+Dialogue window
+=========================================
+*/
+
+dialog {
+    max-width: 700px;
+}
+
+dialog::backdrop {
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-div {
+    background-color: #fff;
+    padding: 30px;
+    box-sizing: border-box;
+}
+
+.modal-header {
+ display: flex;
+}
+
+.header-info {
+    flex: 1;
+}
+
+.header-info h1 {
+    color: black;
+    margin: 0 0 10px 0;
+}
+
+.film-details {
+    font-weight: 700;
+    margin: 4px 0;
+    font-size: 0.95rem;
+}
+
+.director-block {
+    margin-top: 20px;
+}
+
+.director-block p {
+    margin: 2px 0;
+}
+
+
+.modal-body {
+    margin-bottom: 25px;
+    text-align: justify;
+    line-height: 1.5;
+    font-size: 1rem;
+}
+
+.modal-footer {
+    font-size: 0.95rem;
+}
+
+.close-btn {
+    display: block;
+    margin: 30px auto 0;
+    background-color: #ff0000;
+    color: white;
+    border: none;
+    border-radius: 50px;
+    padding: 10px 50px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.close-btn:hover {
+    background-color: #cc0000;
+}
+
+.actors_list{
+    margin-bottom: 105px;
+}

@@ -34,8 +34,12 @@ async function loadBestMovie() {
         description.textContent = fullMovie.long_description;
 
         const btn = document.createElement('button');
-        btn.classList.add('btn');
+        btn.classList.add('btn-red');
         btn.textContent = 'Détails';
+
+        btn.addEventListener('click', function() {
+            openModal(fullMovie.id);
+        });
 
         divInfo.appendChild(title);
         divInfo.appendChild(description);
