@@ -53,13 +53,13 @@ async function loadBestMovie() {
     }
 }
 
-function createMovieCard(film) {
+function createMovieCard(movie) {
     let card = document.createElement('article');
     card.classList.add('movie-card');
 
     let img = document.createElement('img');
-    img.src = film.image_url;
-    img.alt = film.title;
+    img.src = movie.image_url;
+    img.alt = movie.title;
 
     img.addEventListener('error', function() {
         img.src = 'img/logo.png';
@@ -69,7 +69,7 @@ function createMovieCard(film) {
     overlay.classList.add('movie-overlay');
 
     let title = document.createElement('h3');
-    title.textContent = film.title;
+    title.textContent = movie.title;
 
     let button = document.createElement('button');
     button.classList.add('details-btn');
@@ -77,7 +77,7 @@ function createMovieCard(film) {
 
     // Open Modal
     button.addEventListener('click', function() {
-        openModal(film.id);
+        openModal(movie.id);
     });
 
     overlay.appendChild(title);
@@ -93,17 +93,17 @@ async function loadBestCategory() {
     let url = API_URL + '/titles/?page_size=7&sort_by=-imdb_score';
 
     try {
-        let reponse = await fetch(url);
-        let data = await reponse.json();
-        let resultats = data.results;
+        let response = await fetch(url);
+        let data = await response.json();
+        let results = data.results;
 
-        films_list = resultats.slice(1, 7);
+        movies_list = results.slice(1, 7);
 
         let container = document.getElementById('best_rank');
 
-        for (let i = 0; i < films_list.length; i++) {
-            let film = films_list[i];
-            let card = createMovieCard(film);
+        for (let i = 0; i < movies_list.length; i++) {
+            let movie = movies_list[i];
+            let card = createMovieCard(movie);
             container.appendChild(card);
         }
 
@@ -118,12 +118,12 @@ async function loadCategory(genre, idSection) {
 
     try {
 
-        let reponse = await fetch(url);
-        let data = await reponse.json();
-        let resultats = data.results;
+        let response = await fetch(url);
+        let data = await response.json();
+        let results = data.results;
 
         let movieToDisplay = [];
-        movieToDisplay = resultats.slice(0, 6);
+        movieToDisplay = results.slice(0, 6);
 
 
         let container = document.getElementById(idSection);
@@ -145,8 +145,8 @@ async function otherCategory(idMenu, idSectionToLoad, defaultGenre){
     let url = API_URL + '/genres/?page_size=50';
 
     try {
-        let reponse = await fetch(url);
-        let data = await reponse.json();
+        let response = await fetch(url);
+        let data = await response.json();
         let menu = document.getElementById(idMenu);
 
         // Add each genre in menu
@@ -191,12 +191,12 @@ closeButton.addEventListener('click', function() {
     modal.close();
 });
 
-async function openModal(idFilm) {
-    let url = API_URL + '/titles/' + idFilm;
+async function openModal(idmovie) {
+    let url = API_URL + '/titles/' + idmovie;
 
     try {
-        let reponse = await fetch(url);
-        let movie = await reponse.json();
+        let response = await fetch(url);
+        let movie = await response.json();
 
 
         // Write element in html
@@ -212,11 +212,11 @@ async function openModal(idFilm) {
         document.getElementById('modal-actors').textContent = movie.actors.join(', ');
 
         // Money Make
-        let recette = "No indication";
+        let revenue = "No indication";
         if (movie.worldwide_gross_income !== null) {
-            recette = movie.worldwide_gross_income + " $";
+            revenue = movie.worldwide_gross_income + " $";
         }
-        document.getElementById('modal-boxoffice').textContent = recette;
+        document.getElementById('modal-boxoffice').textContent = revenue;
 
         // Handle img
         let imageModale = document.getElementById('modal-image');
@@ -242,5 +242,5 @@ loadCategory("mystery", "mystery")
 loadCategory("action", "biography")
 
 // Other Menu
-otherCategory('category_choice', 'autre_1', 'Animation');
-otherCategory('category_choice_2', 'autre_2', 'Sport');
+otherCategory('category_choice', 'other_1', 'Animation');
+otherCategory('category_choice_2', 'other_2', 'Sport');

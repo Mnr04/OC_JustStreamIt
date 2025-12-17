@@ -14,8 +14,8 @@ header,
 #best_movie,
 h2,
 footer,
-.autre_1,
-.autre_2 {
+.other_1,
+.other_2 {
     width: 80%;
     max-width: 1000px;
     margin: 0 auto;
@@ -129,8 +129,8 @@ Category Section
 #best_rank,
 #mystery,
 #biography,
-#autre_1,
-#autre_2 {
+#other_1,
+#other_2 {
     margin-top: 30px;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -143,8 +143,8 @@ Category Section
 
 #best_rank img,
 #mystery img,
-#autre_1 img,
-#autre_2 img{
+#other_1 img,
+#other_2 img{
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -247,7 +247,7 @@ dialog::backdrop {
     margin: 0 0 10px 0;
 }
 
-.film-details {
+.movie-details {
     font-weight: 700;
     margin: 4px 0;
     font-size: 0.95rem;
