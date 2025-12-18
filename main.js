@@ -239,7 +239,7 @@ async function openModal(idmovie) {
 loadBestMovie();
 loadBestCategory();
 loadCategory("mystery", "mystery")
-loadCategory("action", "biography")
+loadCategory("biography", "biography")
 
 // Other Menu
 otherCategory('category_choice', 'other_1', 'Animation');

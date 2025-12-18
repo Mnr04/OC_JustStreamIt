@@ -294,3 +294,70 @@ dialog::backdrop {
 .actors_list{
     margin-bottom: 105px;
 }
+
+/* =========================================
+   TABLETTE (max-width: 1024px)
+   ========================================= */
+@media (max-width: 1024px) {
+
+    header,
+    #best_movie,
+    h2,
+    .other_1,
+    .other_2,
+    #best_rank,
+    #mystery,
+    #biography,
+    #other_1,
+    #other_2 {
+        width: 95%;
+        max-width: none;
+    }
+
+    #best_rank,
+    #mystery,
+    #biography,
+    #other_1,
+    #other_2 {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+
+    .movie-card {
+        width: 100%;
+        height: auto;
+    }
+
+    .movie-card img {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+    }
+
+    .modal-header {
+        flex-direction: column-reverse;
+        align-items: center;
+        text-align: center;
+    }
+
+    .header-img {
+        margin-bottom: 20px;
+        max-width: 250px;
+    }
+
+    .movie-overlay {
+        opacity: 1;
+        height: 20%;
+        padding: 10px;
+        margin-top: 20%;
+    }
+
+    .movie-overlay h3 {
+        font-size: 0.9rem;
+        margin-bottom: 5px;
+    }
+
+    .details-btn {
+        padding: 5px 10px;
+    }
+}
