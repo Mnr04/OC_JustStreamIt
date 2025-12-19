@@ -361,3 +361,63 @@ dialog::backdrop {
         padding: 5px 10px;
     }
 }
+
+/* =========================================
+   Mobile (max-width: 728px)
+   ========================================= */
+@media (max-width: 768px) {
+
+    header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    #best_movie {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    h2{
+        text-align: center;
+    }
+
+    #best_movie img {
+        margin-right: 0;
+        margin-bottom: 20px;
+    }
+
+    .btn-red {
+        align-self: center;
+    }
+
+    #best_rank,
+    #mystery,
+    #biography,
+    #other_1,
+    #other_2 {
+        grid-template-columns: 1fr;
+    }
+
+
+    .modal-header {
+        flex-direction: column-reverse;
+        align-items: center;
+        text-align: center;
+    }
+
+    .header-img {
+        margin-bottom: 20px;
+    }
+
+    .modal-div {
+        padding: 15px;
+    }
+    .movie-card {
+        height: auto !important;
+    }
+
+    h1 {
+        display: None;
+    }
+}

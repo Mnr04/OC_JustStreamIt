@@ -97,7 +97,7 @@ async function loadBestCategory() {
         let data = await response.json();
         let results = data.results;
 
-        movies_list = results.slice(1, 7);
+        let movies_list = results.slice(1, 7);
 
         let container = document.getElementById('best_rank');
 
@@ -114,7 +114,7 @@ async function loadBestCategory() {
 
 async function loadCategory(genre, idSection) {
 
-    let url = API_URL + '/titles/?sort_by=-imdb_score&genre=' + genre + '&page_size=10';
+    let url = API_URL + '/titles/?sort_by=-imdb_score&genre=' + genre + '&page_size=7';
 
     try {
 
