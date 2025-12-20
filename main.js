@@ -234,6 +234,27 @@ async function openModal(idmovie) {
     }
 }
 
+function addButton() {
+    let buttons = document.querySelectorAll('.btn-toggle');
+
+    buttons.forEach(function(buttons) {
+    buttons.addEventListener('click', function() {
+
+        // Take element before button
+        let section = buttons.previousElementSibling;
+
+        // Display / remove className
+        section.classList.toggle('tous-visibles');
+
+        if (section.classList.contains('tous-visibles')) {
+            buttons.textContent = 'Voir moins';
+        } else {
+            buttons.textContent = 'Voir plus';
+        }
+    });
+});
+}
+
 
 // Fix Category
 loadBestMovie();
@@ -244,3 +265,6 @@ loadCategory("biography", "biography")
 // Other Menu
 otherCategory('category_choice', 'other_1', 'Animation');
 otherCategory('category_choice_2', 'other_2', 'Sport');
+
+// Button More/Less
+addButton()
