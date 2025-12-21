@@ -13,38 +13,58 @@
     </header>
 
     <main>
-        <h2>Meilleur Film</h2>
-        <section id="best_movie">
+
+        <section class="best-movie-section">
+            <h2>Meilleur Film</h2>
+            <div id="best_movie">
+            </div>
         </section>
 
-        <h2>Films les mieux notés</h2>
-        <section id="best_rank" class="category">
-            </section>
-        <button class="btn-toggle">Voir plus</button>
+        <section class="category-section">
+            <h2>Films les mieux notés</h2>
+            <div id="best_rank" class="category">
+            </div>
+            <button class="btn-toggle">Voir plus</button>
+        </section>
 
-        <h2>Mystery</h2>
-        <section id="mystery" class="category">
-            </section>
-        <button class="btn-toggle">Voir plus</button>
+        <section class="category-section">
+            <h2>Mystery</h2>
+            <div id="mystery" class="category">
+            </div>
+            <button class="btn-toggle">Voir plus</button>
+        </section>
 
-        <h2>Biography</h2>
-        <section id="biography" class="category">
-             </section>
-        <button class="btn-toggle">Voir plus</button>
+        <section class="category-section">
+            <h2>Biography</h2>
+            <div id="biography" class="category">
+            </div>
+            <button class="btn-toggle">Voir plus</button>
+        </section>
 
-        <div class="other_1">
-            <label for="category_choice" id="animation">Autres : </label>
-            <select id="category_choice"></select>
-        </div>
-        <section id="other_1" class="category"></section>
-        <button class="btn-toggle">Voir plus</button>
+        <section class="category-section">
+            <h2 style="display:none;">Catégorie : Animation</h2>
 
-        <div class="other_2">
-            <label for="category_choice_2" id="sport">Autres : </label>
-            <select id="category_choice_2"></select>
-        </div>
-        <section id="other_2" class="category"></section>
-        <button class="btn-toggle">Voir plus</button>
+            <div class="other_1">
+                <label for="category_choice" id="animation">Autres : </label>
+                <select id="category_choice"></select>
+            </div>
+
+            <div id="other_1" class="category"></div>
+            <button class="btn-toggle">Voir plus</button>
+        </section>
+
+        <section class="category-section">
+            <h2 style="display:none;">Catégorie : Sport</h2>
+
+            <div class="other_2">
+                <label for="category_choice_2" id="sport">Autres : </label>
+                <select id="category_choice_2"></select>
+            </div>
+
+            <div id="other_2" class="category"></div>
+            <button class="btn-toggle">Voir plus</button>
+        </section>
+
     </main>
 
     <footer>
@@ -56,7 +76,7 @@
         <div class="modal-div">
             <div class="modal-header">
                 <div class="header-info">
-                    <h1 id="modal-title"></h1>
+                    <h1 id="modal-title">Titre du film</h1>
 
                     <p class="movie-details">
                         <span id="modal-year"></span> - <span id="modal-genres"></span>
@@ -75,7 +95,7 @@
                 </div>
 
                 <div class="header-img">
-                    <img id="modal-image" src="" alt="Affiche du movie">
+                    <img id="modal-image" src="img/logo.png" alt="Affiche du film">
                 </div>
             </div>
 
@@ -90,7 +110,6 @@
             </div>
         </div>
     </dialog>
-
 
     <script src="main.js"></script>
 </body>
