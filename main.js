@@ -237,34 +237,32 @@ async function openModal(idmovie) {
 function addButton() {
     let buttons = document.querySelectorAll('.btn-toggle');
 
-    buttons.forEach(function(buttons) {
-    buttons.addEventListener('click', function() {
+    buttons.forEach(function(button) {
+        button.addEventListener('click', function() {
+            let section = button.previousElementSibling;
+            section.classList.toggle('tous-visibles');
 
-        // Take element before button
-        let section = buttons.previousElementSibling;
-
-        // Display / remove className
-        section.classList.toggle('tous-visibles');
-
-        if (section.classList.contains('tous-visibles')) {
-            buttons.textContent = 'Voir moins';
-        } else {
-            buttons.textContent = 'Voir plus';
-        }
+            if (section.classList.contains('tous-visibles')) {
+                button.textContent = 'Voir moins';
+            } else {
+                button.textContent = 'Voir plus';
+            }
+        });
     });
-});
 }
 
 
-// Fix Category
-loadBestMovie();
-loadBestCategory();
-loadCategory("mystery", "mystery")
-loadCategory("biography", "biography")
+function main() {
+    loadBestMovie();
 
-// Other Menu
-otherCategory('category_choice', 'other_1', 'Animation');
-otherCategory('category_choice_2', 'other_2', 'Sport');
+    loadBestCategory();
+    loadCategory("mystery", "mystery");
+    loadCategory("biography", "biography");
 
-// Button More/Less
-addButton()
+    otherCategory('category_choice', 'other_1', 'Animation');
+    otherCategory('category_choice_2', 'other_2', 'Sport');
+
+    addButton();
+}
+
+document.addEventListener('DOMContentLoaded', main);
