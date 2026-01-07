@@ -4,8 +4,9 @@ A web interface to visualize real-time movie rankings. This project was built us
 
 ## Prerequisites
 
-Python.
-The OCMovies-API.
+--> Python.
+
+--> The OCMovies-API.
 
 ## Installation & Launch
 
@@ -14,8 +15,8 @@ The website requires the local API to be running on port `8000`.
 
 Open your terminal, navigate to the API folder, and run the following commands:
 
-```bash
 # 1. Enter the API folder 
+```bash
 cd OCMovies-API-EN-FR
 ```
 
@@ -28,8 +29,9 @@ python -m venv env
 # For Windows:
 ```bash
 env\Scripts\activate
-# For macOS/Linux:
 ```
+
+# For macOS/Linux:
 ```bash
 source env/bin/activate
 ```
