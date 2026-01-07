@@ -177,15 +177,10 @@ async function otherCategory(idMenu, idSectionToLoad, defaultGenre){
 }
 
 // MODAL
-// Open
+// Close Modal
 let modal = document.getElementById('movie-modal');
-modal.addEventListener('click', function(event) {
-    if (event.target === modal) {
-        modal.close();
-    }
-});
-// Close
 let closeButton = document.getElementById('modal-close-btn');
+
 closeButton.addEventListener('click', function() {
     modal.close();
 });

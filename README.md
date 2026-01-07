@@ -11,11 +11,10 @@ A web interface to visualize real-time movie rankings. This project was built us
 ## Installation & Launch
 
 ## A. Start the API (Backend)
-The website requires the local API to be running on port `8000`.
 
 Open your terminal, navigate to the API folder, and run the following commands:
 
-### 1. Enter the API folder 
+### 1. Enter the API folder
 ```bash
 cd OCMovies-API-EN-FR
 ```
@@ -53,7 +52,7 @@ python manage.py runserver
 
 ## B. Start the Website (Frontend)
 
-# 1. Clone this repository 
+# 1. Clone this repository
 ```bash
 git clone https://github.com/Mnr04/OC_JustStreamIt.git
 ```
