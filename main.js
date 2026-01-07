@@ -29,7 +29,6 @@ async function loadBestMovie() {
         const title = document.createElement('h2');
         title.textContent = fullMovie.title;
 
-        // ....
         const description = document.createElement('p');
         description.textContent = fullMovie.long_description;
 

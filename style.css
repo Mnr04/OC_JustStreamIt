@@ -244,6 +244,12 @@ Img Card
     cursor: pointer;
     font-size: 1rem;
 }
+
+.header-img img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
 /*
     Others elements
 */
