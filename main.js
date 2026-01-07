@@ -29,7 +29,7 @@ async function loadBestMovie() {
         const title = document.createElement('h2');
         title.textContent = fullMovie.title;
 
-
+        // ....
         const description = document.createElement('p');
         description.textContent = fullMovie.long_description;
 
@@ -114,7 +114,7 @@ async function loadBestCategory() {
 
 async function loadCategory(genre, idSection) {
 
-    let url = API_URL + '/titles/?sort_by=-imdb_score&genre=' + genre + '&page_size=7';
+    let url = API_URL + '/titles/?sort_by=-imdb_score&genre=' + genre + '&page_size=6';
 
     try {
 
