@@ -26,13 +26,13 @@ python -m venv env
 ```
 
 # 3. Activate the environment
-# For Windows:
 ```bash
+# For Windows:
 env\Scripts\activate
 ```
 
-# For macOS/Linux:
 ```bash
+# For macOS/Linux:
 source env/bin/activate
 ```
 
