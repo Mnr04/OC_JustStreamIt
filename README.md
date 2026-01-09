@@ -25,7 +25,7 @@ git clone https://github.com/Mnr04/OC_JustStreamIt.git
 
 # 2. Enter the project folder
 ```bash
-cd JustStreamIt
+cd OC_JustStreamIt
 ```
 
 # 3. Open index.html in your default browser
