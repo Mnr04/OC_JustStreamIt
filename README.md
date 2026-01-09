@@ -20,12 +20,12 @@ https://github.com/OpenClassrooms-Student-Center/OCMovies-API-EN-FR
 
 # 1. Clone this repository
 ```bash
-git clone https://github.com/Mnr04/OC_JustStreamIt.git
+git clone https://github.com/Mnr04/OCJustStreamIt.git
 ```
 
 # 2. Enter the project folder
 ```bash
-cd OC_JustStreamIt
+cd OCJustStreamIt
 ```
 
 # 3. Open index.html in your default browser
