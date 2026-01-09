@@ -12,43 +12,9 @@ A web interface to visualize real-time movie rankings. This project was built us
 
 ## A. Start the API (Backend)
 
-Open your terminal, navigate to the API folder, and run the following commands:
+Follow these instructions to set up the local version of the OCMovies API:
+https://github.com/OpenClassrooms-Student-Center/OCMovies-API-EN-FR
 
-### 1. Enter the API folder
-```bash
-cd OCMovies-API-EN-FR
-```
-
-### 2. Create a virtual environment
-```bash
-python -m venv env
-```
-
-### 3. Activate the environment
-```bash
-# For Windows:
-env\Scripts\activate
-```
-
-```bash
-# For macOS/Linux:
-source env/bin/activate
-```
-
-### 4. Install dependencies
-```bash
-pip install -r requirements.txt
-```
-
-### 5. Create and populate the database
-```bash
-python manage.py create_db
-```
-
-### 6. Run the server
-```bash
-python manage.py runserver
-```
 
 ## B. Start the Website (Frontend)
 
