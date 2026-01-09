@@ -1,4 +1,5 @@
 const API_URL = 'http://localhost:8000/api/v1';
+let modal;
 
 async function loadBestMovie() {
     try {
@@ -176,15 +177,6 @@ async function otherCategory(idMenu, idSectionToLoad, defaultGenre){
 
 }
 
-// MODAL
-// Close Modal
-let modal = document.getElementById('movie-modal');
-let closeButton = document.getElementById('modal-close-btn');
-
-closeButton.addEventListener('click', function() {
-    modal.close();
-});
-
 async function openModal(idmovie) {
     let url = API_URL + '/titles/' + idmovie;
 
@@ -245,10 +237,8 @@ function addButton() {
     });
 }
 
-
 function main() {
     loadBestMovie();
-
     loadBestCategory();
     loadCategory("mystery", "mystery");
     loadCategory("biography", "biography");
@@ -257,6 +247,14 @@ function main() {
     otherCategory('category_choice_2', 'other_2', 'Sport');
 
     addButton();
+
+    // MODAL
+    modal = document.getElementById('movie-modal');
+    let closeButton = document.getElementById('modal-close-btn');
+
+    closeButton.addEventListener('click', function() {
+        modal.close();
+    });
 }
 
 document.addEventListener('DOMContentLoaded', main);
